@@ -1,5 +1,8 @@
-h1 {
-    background-color: beige;
+.header {
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .main-container {
@@ -12,8 +15,7 @@ h1 {
 .gameboard {
     height: 600px;
     width: 600px;
-    background-color: red;
-    margin-top: 100px;
+    background-color: beige;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
 }
@@ -21,4 +23,8 @@ h1 {
 .cells {
     box-sizing: border-box;
     border: 1px black solid;
+}
+
+.cells:hover {
+    background-color: red;
 }
