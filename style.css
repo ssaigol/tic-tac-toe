@@ -1,0 +1,24 @@
+h1 {
+    background-color: beige;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.gameboard {
+    height: 600px;
+    width: 600px;
+    background-color: red;
+    margin-top: 100px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.cells {
+    box-sizing: border-box;
+    border: 1px black solid;
+}
