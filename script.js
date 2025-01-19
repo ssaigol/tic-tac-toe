@@ -43,6 +43,7 @@ const Gameboard = (function () {
         } else boardArr[row][column].addValue(this.token);
         Gameplay.gameWon();
         Gameplay.gameTied();
+        displayCache();
         return console.log(getBoard());
     }
 
@@ -68,10 +69,6 @@ const Players = (function () {
     
     return {playerName, playerToken};
 })();
-
-
-
-
 
 
 const Gameplay = (function () {
@@ -136,4 +133,20 @@ const Gameplay = (function () {
 
     return {displayPlayers, player1Move, player2Move, gameWon, gameTied};
 })();
+
+
+const displayCache = function () {
+    const gameboard = document.getElementById("gameboard");
+    const cells = document.getElementsByClassName("cells");
+    for (i = 0; i < cells.length; i++) {
+        const cellRow = cells[i].dataset.row;
+        const cellColumn = cells[i].dataset.column;
+        // const cellContent = document.createElement("div");
+        // cellContent.textContent = Gameboard.getCellValue(cellRow, cellColumn);
+        // cells[i].appendChild(cellContent);
+        cells[i].textContent = Gameboard.getCellValue(cellRow, cellColumn);
+    }
+};
+
+
 
