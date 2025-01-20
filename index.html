@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Tic-Tac-Toe</title>
   <link rel="stylesheet" href="style.css">
   <script defer src="script.js"></script>
 </head>
@@ -11,17 +11,34 @@
     <div class="main-container">
         <div class="header"><h1>Tic-Tac-Toe</h1></div>
         <div id="gameboard">
-            <div class="cells" data-row="0" data-column="0"></div>
-            <div class="cells" data-row="0" data-column="1"></div>
-            <div class="cells" data-row="0" data-column="2"></div>
-            <div class="cells" data-row="1" data-column="0"></div>
-            <div class="cells" data-row="1" data-column="1"></div>
-            <div class="cells" data-row="1" data-column="2"></div>
-            <div class="cells" data-row="2" data-column="0"></div>
-            <div class="cells" data-row="2" data-column="1"></div>
-            <div class="cells" data-row="2" data-column="2"></div>
+            <div class="cells player1-hover" data-row="0" data-column="0"></div>
+            <div class="cells player1-hover" data-row="0" data-column="1"></div>
+            <div class="cells player1-hover" data-row="0" data-column="2"></div>
+            <div class="cells player1-hover" data-row="1" data-column="0"></div>
+            <div class="cells player1-hover" data-row="1" data-column="1"></div>
+            <div class="cells player1-hover" data-row="1" data-column="2"></div>
+            <div class="cells player1-hover" data-row="2" data-column="0"></div>
+            <div class="cells player1-hover" data-row="2" data-column="1"></div>
+            <div class="cells player1-hover" data-row="2" data-column="2"></div>
+        </div>
+        <div id="game-controls">
+            <button id="new-game">New Game</button>
+            <input type="text" name="player1" id="player1" value="Player 1" readonly>
+            <input type="text" name="player2" id="player2" value="Player 2" readonly>
         </div>
     </div>
+    <div id="footer"><div id="game-status"></div></div>
+
+    <dialog id="new-game-dialog">
+            <div id="modal">
+                <div id="dialog-form">
+                    <label for="player1-input">Player 1:<input type="text" name="player1-input" id="player1-input" value="Player 1"></label>
+                    <label for="player2-input">Player 2:<input type="text" name="player2-input" id="player2-input" value="Player 2"></label>
+                    <button id="modal-submit">Submit</button>
+                </div>
+                <div id="instructions"><i>Player 1 plays as X. Player 2 plays as O. X goes first.</i></div>
+            </div>
+    </dialog>
 
 </body>
 </html>
