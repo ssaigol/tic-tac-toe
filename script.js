@@ -57,6 +57,9 @@ const Players = (function () {
         if (name1 != "" && name2 != "") {
             players[0].name = name1;
             players[1].name = name2;
+        } else {
+            players[0].name = "Player 1";
+            players[1].name = "Player 2";
         };
     }
     
@@ -169,6 +172,7 @@ const Display = (function () {
         currentPlayer = "Player 1"; //Sets current player to Player 1 (or equivalent name) at start of new game
         cellsArr.forEach(cell => {                    //Creates array of each Cell element from cells HTML collection
             cell.addEventListener("click", clickMove);         //attaches click event listener to each Cell, triggers clickMove function
+            cell.classList.remove("redX", "greenO");
         });
         newGame.style.border = "none";
     }
@@ -211,6 +215,12 @@ const Display = (function () {
             } else if (currentPlayer === "Player 2") {
                 cell.classList.add("player2-hover");
             };
+
+            if (cell.textContent === "X") {
+                cell.classList.add("redX");
+            } else if (cell.textContent === "O") {
+                cell.classList.add("greenO");
+            }
         });
         
         let winningPlayer;

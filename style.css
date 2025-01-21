@@ -163,3 +163,13 @@ dialog::backdrop {
     margin-top: 30px;
     height: 30px;
 }
+
+.greenO {
+    /* color:#5ce05c; */
+    color: rgb(4, 174, 4);
+}
+
+.redX {
+    /* color: #f05656; */
+    color: red;
+}
