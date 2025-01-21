@@ -170,6 +170,7 @@ const Display = (function () {
         cellsArr.forEach(cell => {                    //Creates array of each Cell element from cells HTML collection
             cell.addEventListener("click", clickMove);         //attaches click event listener to each Cell, triggers clickMove function
         });
+        newGame.style.border = "none";
     }
 
     //clickMove function
@@ -217,21 +218,23 @@ const Display = (function () {
             winningPlayer = Players.getPlayerName(1);
         } else winningPlayer = Players.getPlayerName(0);
         if (Gameplay.checkGame() === "Game won") {
-            gameStatus.textContent = `${winningPlayer} won!`;
+            gameStatus.textContent = `~ ${winningPlayer} won! ~`;
             cellsArr.forEach(cell => {
                 cell.removeEventListener("click", clickMove);
                 cell.classList.remove("player1-hover", "player2-hover");
+                newGame.style.border = "2px blue solid";
             });
         } else if (Gameplay.checkGame() === "Game tied") {
-            gameStatus.textContent = "Game tied! No winner";
+            gameStatus.textContent = "~ Game tied! No winner ~";
             cellsArr.forEach(cell => {
                 cell.removeEventListener("click", clickMove);
                 cell.classList.remove("player1-hover", "player2-hover");
+                newGame.style.border = "2px blue solid";
             });
         } else if (currentPlayer === "Player 1") {
-            gameStatus.textContent = `${Players.getPlayerName(0)}'s turn`;
+            gameStatus.textContent = `~ ${Players.getPlayerName(0)}'s turn ~`;
         } else if (currentPlayer === "Player 2") {
-            gameStatus.textContent = `${Players.getPlayerName(1)}'s turn`;
+            gameStatus.textContent = `~ ${Players.getPlayerName(1)}'s turn ~`;
         }
 
 
