@@ -257,3 +257,10 @@ const Display = (function () {
     newGameSubmit.addEventListener("click", render);
    
 })();
+
+
+
+//Fix at later date:
+    //Gamewon function => optimize logic to less lines of code
+    //Encapsulate dom reference variables at top of Display function to make unavailable in global scope
+    //Gameboard.playmove is globally scoped and takes token parameter, so someone can play a move in console with a token other than X or O, in theory
