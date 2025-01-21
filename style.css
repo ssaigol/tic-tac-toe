@@ -20,6 +20,7 @@ body > div {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin-bottom: 50px
 }
 
 .main-container {
@@ -36,6 +37,7 @@ body > div {
     grid-template-columns: repeat(3, 200px);
     grid-template-rows: repeat(3, 200px);
     border: 1px black solid;
+    margin-bottom: 50px;
 }
 
 .cells {
@@ -58,7 +60,7 @@ body > div {
 
 #game-controls {
     display: flex;
-    margin: 50px 0px 20px;
+    margin: 50px 0px 50px;
     gap: 30px;
     width: 600px;
     justify-content: space-evenly;
